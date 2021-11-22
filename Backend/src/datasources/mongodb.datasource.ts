@@ -4,7 +4,7 @@ import {juggler} from '@loopback/repository';
 const config = {
   name: 'mongodb',
   connector: 'mongodb',
-  url: 'mongodb://CarCoders:misionticgrupo6@carcoders-shard-00-00.5lu6b.mongodb.net:27017,carcoders-shard-00-01.5lu6b.mongodb.net:27017,carcoders-shard-00-02.5lu6b.mongodb.net:27017/CarCoders?ssl=true&replicaSet=atlas-swkvwo-shard-0&authSource=admin&retryWrites=true&w=majority',
+  url: 'mongodb://FelipeD98:misionticgrupo6carcoders@clusterwebapplication-shard-00-00.zx7wg.mongodb.net:27017,clusterwebapplication-shard-00-01.zx7wg.mongodb.net:27017,clusterwebapplication-shard-00-02.zx7wg.mongodb.net:27017/CarCoders?ssl=true&replicaSet=atlas-fhm97o-shard-0&authSource=admin&retryWrites=true&w=majority',
   host: '',
   port: 0,
   user: '',
@@ -13,10 +13,6 @@ const config = {
   useNewUrlParser: true
 };
 
-// Observe application's life cycle to disconnect the datasource when
-// application is stopped. This allows the application to be shut down
-// gracefully. The `stop()` method is inherited from `juggler.DataSource`.
-// Learn more at https://loopback.io/doc/en/lb4/Life-cycle.html
 @lifeCycleObserver('datasource')
 export class MongodbDataSource extends juggler.DataSource
   implements LifeCycleObserver {
