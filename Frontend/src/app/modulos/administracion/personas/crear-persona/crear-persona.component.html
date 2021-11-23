@@ -1,0 +1,44 @@
+
+<div class="container">
+    <div class="title">CREAR PERSONA</div>
+    
+    <form method="POST" [formGroup]="form" novalidate (ngSubmit)="Guardar($event)">
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">Nombres</span>
+                <input type="text" placeholder="Nombres" formControlName="nombres">
+                <div *ngIf="nombres?.errors && nombres?.touched">
+                    <small *ngIf="nombres?.hasError('required')">Este campo es requerido</small>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <span class="details">Apellidos</span>
+                <input type="text" placeholder="Apellidos" formControlName="apellidos">
+                <div *ngIf="apellidos?.errors && apellidos?.touched">
+                    <small *ngIf="apellidos?.hasError('required')">Este campo es requerido</small>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <span class="details">Correo</span>
+                <input type="email" placeholder="Correo" formControlName="correo">
+                <div *ngIf="correo?.errors && correo?.touched">
+                    <small *ngIf="correo?.hasError('email')">Digite un correo válido</small>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <span class="details">Celular</span>
+                <input type="text" placeholder="Celular" formControlName="celular">
+                <div *ngIf="celular?.errors && celular?.touched">
+                    <small *ngIf="celular?.hasError('required')">Este campo es requerido</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="button">
+            <input [disabled]="form.invalid" type="submit" value="Guardar">
+        </div>
+    </form>
+</div>

@@ -85,15 +85,17 @@ export class PersonaController {
 
     let p = await this.personaRepository.create(persona);
     let correo = persona.correo;
+    let nombre = persona.nombres;
     let asunto = 'Registro en Car Coders';
     let mensaje = `Hola ${persona.nombres + ' ' + persona.apellidos}, su nombre de 
     usuario es ${persona.correo} y la contraseña para el acceso a la app es ${clave}` ;
 
-    fetch(`${ Llaves.urlServicioNotificaciones }/envio-correo?correo=${correo}&asunto=${asunto}&mensaje=${mensaje}`)
+    fetch(`${ Llaves.urlServicioNotificaciones }/envio-correo?correo=${correo}&nombre=${nombre}&asunto=${asunto}&mensaje=${mensaje}`)
     .then((data: any) => {
       console.log(data);
     });
 
+    console.log("¡El usuario " + p.nombres + " fue creado!");
     return p;
   }
 
