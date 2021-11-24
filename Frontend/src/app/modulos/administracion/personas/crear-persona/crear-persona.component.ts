@@ -11,7 +11,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 export class CrearPersonaComponent implements OnInit {
 
   form: FormGroup;
-  private url: string = 'http://localhost:3000/personas';
+  url: string = 'http://localhost:3000/personas';
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) { 
     this.buildForm();
@@ -37,8 +37,11 @@ export class CrearPersonaComponent implements OnInit {
       const datos = this.form.value;
       
       this.http.post(this.url, datos).subscribe(result => {
-        console.warn(result);
+        console.log(result);
       });
+
+      alert('¡El usuario ' + datos.nombres + ' ha sido registrado con éxito!');
+
 
     } else {
       this.form.markAllAsTouched();

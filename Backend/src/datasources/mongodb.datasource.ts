@@ -1,10 +1,12 @@
 import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const config = {
   name: 'mongodb',
   connector: 'mongodb',
-  url: 'mongodb://FelipeD98:misionticgrupo6carcoders@clusterwebapplication-shard-00-00.zx7wg.mongodb.net:27017,clusterwebapplication-shard-00-01.zx7wg.mongodb.net:27017,clusterwebapplication-shard-00-02.zx7wg.mongodb.net:27017/CarCoders?ssl=true&replicaSet=atlas-fhm97o-shard-0&authSource=admin&retryWrites=true&w=majority',
+  url: `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@clusterwebapplication-shard-00-00.8g5ne.mongodb.net:27017,clusterwebapplication-shard-00-01.8g5ne.mongodb.net:27017,clusterwebapplication-shard-00-02.8g5ne.mongodb.net:27017/CarCoders?ssl=true&replicaSet=atlas-a8r12n-shard-0&authSource=admin&retryWrites=true&w=majority`,
   host: '',
   port: 0,
   user: '',

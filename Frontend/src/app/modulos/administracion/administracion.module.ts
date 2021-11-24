@@ -13,6 +13,8 @@ import { BuscarProductoComponent } from './productos/buscar-producto/buscar-prod
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PersonasComponent } from './personas/personas/personas.component';
+import { ProductosComponent } from './productos/productos/productos.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     CrearProductoComponent,
     EditarProductoComponent,
     EliminarProductoComponent,
-    BuscarProductoComponent
+    BuscarProductoComponent,
+    PersonasComponent,
+    ProductosComponent
   ],
   imports: [
     CommonModule,
