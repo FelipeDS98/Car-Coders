@@ -4,7 +4,6 @@ from sib_api_v3_sdk.rest import ApiException
 
 from decouple import config
 from flask import Flask, request
-from mailjet_rest import Client
 from twilio.rest import Client
 
 app = Flask(__name__)
