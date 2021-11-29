@@ -6,16 +6,23 @@ import { IdentificacionComponent } from './identificacion/identificacion.compone
 import { CambioClaveComponent } from './cambio-clave/cambio-clave.component';
 import { RecuperarClaveComponent } from './recuperar-clave/recuperar-clave.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CerrarSesionComponent } from './cerrar-sesion/cerrar-sesion.component';
+
 
 @NgModule({
   declarations: [
     IdentificacionComponent,
     CambioClaveComponent,
-    RecuperarClaveComponent
+    RecuperarClaveComponent,
+    CerrarSesionComponent
   ],
   imports: [
     CommonModule,
-    SeguridadRoutingModule
+    SeguridadRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class SeguridadModule { }

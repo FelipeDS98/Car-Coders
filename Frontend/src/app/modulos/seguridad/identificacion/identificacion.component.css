@@ -1,0 +1,5 @@
+
+form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100% - 20px);
+}

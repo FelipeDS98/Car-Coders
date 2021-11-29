@@ -42,7 +42,6 @@ export class CrearPersonaComponent implements OnInit {
 
       alert('¡El usuario ' + datos.nombres + ' ha sido registrado con éxito!');
 
-
     } else {
       this.form.markAllAsTouched();
     }

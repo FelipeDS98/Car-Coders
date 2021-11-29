@@ -6,36 +6,46 @@
                 <img src="../../../assets/logo.png" alt="Logo">
             </a>
         </li>
+
+        <li *ngIf="InicioSesion" class="nav-item">
+            <a routerLink="/seguridad/identificacion" class="nav-link">
+                <i class='bx bxs-dashboard'></i>
+                <div style="display: flex; flex-direction: column; font-size: 12px;">
+                    <div class="link-text">{{ Nombre }}</div>
+                    <div class="link-text">{{ Correo }}</div>
+                </div>
+            </a>
+        </li>
         
-        <li class="nav-item">
+        <li *ngIf="InicioSesion" class="nav-item">
             <a routerLink="/administracion/personas" class="nav-link">
                 <i class='bx bx-user-pin'></i>
                 <span class="link-text">Personas</span>
             </a>
         </li>
 
-        <li class="nav-item">
+        <li *ngIf="InicioSesion" class="nav-item">
             <a routerLink="/administracion/productos" class="nav-link">
                 <i class='bx bx-car'></i>
                 <span class="link-text">Productos</span>
             </a>
         </li>
         
-        <li class="nav-item">
-            <a routerLink="/pedidos/pedidos" class="nav-link">
-                <i class='bx bx-detail'></i>
-                <span class="link-text">Pedidos</span>
+        <li *ngIf="!InicioSesion" class="nav-item">
+            <a routerLink="/seguridad/identificacion" class="nav-link">
+                <i class='bx bx-log-in'></i>
+                <span class="link-text">Iniciar Sesion</span>
             </a>
         </li>
-        
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class='bx bx-table'></i>
-                <span class="link-text">Administrador</span>
+    
+        <li *ngIf="InicioSesion" class="nav-item">
+            <a routerLink="/seguridad/cerrar-sesion" class="nav-link">
+                <i class='bx bx-log-out'></i>
+                <span class="link-text">Cerrar Sesion</span>
             </a>
         </li>
 
-        <li class="nav-item">
+        <li *ngIf="InicioSesion" class="nav-item">
             <a href="#" class="nav-link">
                 <i class='bx bx-cog' ></i>
                 <span class="link-text">Ajustes</span>

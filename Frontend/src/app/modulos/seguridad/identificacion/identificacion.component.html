@@ -1,1 +1,28 @@
-<p>identificacion works!</p>
+
+<div class="container">
+    <div class="title">ACCESO</div>
+    
+    <form method="POST" [formGroup]="form" novalidate (ngSubmit)="Ingresar($event)">
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">Usuario</span>
+                <input type="text" placeholder="Usuario" formControlName="usuario">
+                <div *ngIf="usuario?.errors && usuario?.touched">
+                    <small *ngIf="usuario?.hasError('required')">Este campo es requerido</small>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <span class="details">Contraseña</span>
+                <input type="password" placeholder="Contraseña" formControlName="clave">
+                <div *ngIf="clave?.errors && clave?.touched">
+                    <small *ngIf="clave?.hasError('required')">Este campo es requerido</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="button">
+            <input [disabled]="form.invalid" type="submit" value="Ingresar">
+        </div>
+    </form>
+</div>
