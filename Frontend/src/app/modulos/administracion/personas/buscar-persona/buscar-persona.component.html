@@ -1,1 +1,23 @@
-<p>buscar-persona works!</p>
+
+<a routerLink="/administracion/crear-persona">Agregar persona</a>
+<table>
+    <thead>
+        <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Correo</th>
+            <th>Celular</th>
+            <th>Editar</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let persona of listadoPersonas">
+            <td>{{ persona.nombres }}</td>
+            <td>{{ persona.apellidos }}</td>
+            <td>{{ persona.correo }}</td>
+            <td>{{ persona.celular }}</td>
+            <td><a routerLink="/administracion/editar-persona/{{ persona.id }}">Editar</a></td>
+        </tr>
+    </tbody>
+</table>

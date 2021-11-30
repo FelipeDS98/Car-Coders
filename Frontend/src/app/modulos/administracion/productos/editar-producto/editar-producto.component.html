@@ -1,1 +1,37 @@
-<p>editar-producto works!</p>
+
+<div class="container">
+    <div class="title">EDITAR PRODUCTO</div>
+    
+    <form method="POST" [formGroup]="form" novalidate (ngSubmit)="Editar($event)">
+        <div class="user-details">
+            <input type="hidden" formControlName="id">
+            <div class="input-box">
+                <span class="details">Nombre</span>
+                <input type="text" placeholder="Nombre" formControlName="nombre">
+                <div *ngIf="nombre?.errors && nombre?.touched">
+                    <small *ngIf="nombre?.hasError('required')">Este campo es requerido</small>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <span class="details">Precio</span>
+                <input type="number" placeholder="Precio" formControlName="precio">
+                <div *ngIf="precio?.errors && precio?.touched">
+                    <small *ngIf="precio?.hasError('required')">Este campo es requerido</small>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <span class="details">Imagen</span>
+                <input type="text" placeholder="Imagen" formControlName="imagen">
+                <div *ngIf="imagen?.errors && imagen?.touched">
+                    <small *ngIf="imagen?.hasError('required')">Este campo es requerido</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="button">
+            <input [disabled]="form.invalid" type="submit" value="Editar">
+        </div>
+    </form>
+</div>

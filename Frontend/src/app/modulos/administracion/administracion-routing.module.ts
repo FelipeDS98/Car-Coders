@@ -21,11 +21,11 @@ const routes: Routes = [
     component: CrearPersonaComponent
   },
   {
-    path: 'editar-persona',
+    path: 'editar-persona/:id',
     component: EditarPersonaComponent
   },
   {
-    path: 'eliminar-persona',
+    path: 'eliminar-persona/:id',
     component: EliminarPersonaComponent
   },
   {
@@ -41,11 +41,11 @@ const routes: Routes = [
     component: CrearProductoComponent
   },
   {
-    path: 'editar-producto',
+    path: 'editar-producto/:id',
     component: EditarProductoComponent
   },
   {
-    path: 'eliminar-producto',
+    path: 'eliminar-producto/:id',
     component: EliminarProductoComponent
   },
   {
